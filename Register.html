@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>VRMS Sign Up</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+
+<style>
+* { margin:0; padding:0; box-sizing:border-box; font-family:'Poppins', sans-serif; }
+body { background:#0b0f19; color:white; }
+
+header { 
+    display:flex; align-items:center; justify-content:space-between; 
+    padding:25px 80px; background:rgba(0,0,0,0.9); 
+    position:fixed; width:100%; top:0;
+}
+
+.logo { font-size:26px; font-weight:700; color:#ccc; }
+
+nav { display:flex; gap:35px; }
+nav a { text-decoration:none; color:#ccc; font-size:18px; }
+nav a:hover { color:#f4b400; }
+
+.login-section { 
+    min-height:100vh; display:flex; flex-direction:column; 
+    justify-content:center; align-items:center; padding-top:140px; 
+}
+
+.top-text { text-align:center; margin-bottom:40px; }
+.top-text h1 { font-size:64px; font-weight:800; }
+.top-text p { color:#9ca3af; }
+
+.form-box { 
+    width:420px; background:#111827; padding:40px; 
+    border-radius:14px; 
+}
+
+.input-group { margin-bottom:20px; }
+.input-group label { color:#f4b400; }
+.input-group input { 
+    width:100%; padding:14px; border-radius:10px; 
+    border:1px solid #1f2937; background:#0b0f19; color:white;
+}
+
+button { 
+    width:100%; padding:16px; background:#f4b400; 
+    border:none; border-radius:10px; font-size:18px; cursor:pointer;
+}
+
+button:hover { background:#e0a800; }
+
+.bottom { margin-top:20px; text-align:center; color:#9ca3af; }
+
+.msg {
+    display:none;
+    padding:10px;
+    border-radius:8px;
+    margin-bottom:15px;
+    text-align:center;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">🚗 VRMS</div>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="vehicle.html">Vehicles</a>
+        <a href="login.html">Book Now</a>
+    </nav>
+</header>
+
+<section class="login-section">
+    <div class="top-text">
+        <h1>Create Account</h1>
+        <p>Sign up to start booking vehicles</p>
+    </div>
+
+    <div class="form-box">
+
+        <div id="msg" class="msg"></div>
+
+        <form onsubmit="handleRegister(event)">
+            
+            <div class="input-group">
+                <label>First Name</label>
+                <input type="text" id="first" required>
+            </div>
+
+            <div class="input-group">
+                <label>Last Name</label>
+                <input type="text" id="last" required>
+            </div>
+
+            <div class="input-group">
+                <label>Email</label>
+                <input type="email" id="email" required>
+            </div>
+
+            <div class="input-group">
+                <label>Password</label>
+                <input type="password" id="password" required>
+            </div>
+
+            <button type="submit">Create Account</button>
+
+        </form>
+
+        <div class="bottom">
+            Already have an account? <a href="login.html">Login here</a>
+        </div>
+
+    </div>
+</section>
+
+<!-- ✅ FIXED PATH -->
+<script src="../static/js/Register.js"></script>
+
+</body>
+</html>

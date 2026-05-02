@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>VRMS - Vehicles</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+
+<style>
+*{ margin:0; padding:0; box-sizing:border-box; font-family:'Poppins', sans-serif; }
+body{ background:#0b0f19; color:white; }
+
+/* NAVBAR */
+header{
+    display:flex; justify-content:space-between; align-items:center;
+    padding:30px 80px; background:rgba(0,0,0,0.9);
+    position:fixed; width:100%; top:0; z-index:1000;
+}
+.logo{ font-size:24px; font-weight:700; }
+nav a{ text-decoration:none; color:#ccc; margin:0 20px; font-size:18px; }
+nav a:hover, nav a.active{ color:#f4b400; }
+
+/* HEADER */
+.page-header{ text-align:center; padding-top:160px; margin-bottom:60px; }
+.page-header h1{ font-size:60px; font-weight:800; }
+
+/* GRID */
+.vehicle-grid{
+    display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));
+    gap:30px; padding:0 80px 80px 80px;
+}
+.vehicle-card{
+    background:#111827; border-radius:16px; overflow:hidden;
+    border:1px solid rgba(255,255,255,0.08);
+}
+.vehicle-image img{ width:100%; height:220px; object-fit:cover; }
+
+.vehicle-content{ padding:25px; }
+.price{ font-size:18px; font-weight:600; }
+
+.rent-btn{
+    display:inline-block; margin-top:15px; padding:10px 20px;
+    background:#f4b400; color:black;
+    border:none; border-radius:8px; cursor:pointer;
+}
+
+/* 🔥 ADDED: FORM POPUP */
+.formBox{
+    display:none;
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.8);
+    justify-content:center;
+    align-items:center;
+    z-index:2000;
+}
+
+.booking-form{
+    background:#111827;
+    padding:30px;
+    width:350px;
+    border-radius:12px;
+    text-align:center;
+}
+
+.booking-form input{
+    width:100%;
+    padding:12px;
+    margin:10px 0;
+    border:none;
+    border-radius:8px;
+}
+
+.booking-form button{
+    width:100%;
+    padding:12px;
+    margin-top:10px;
+    border:none;
+    border-radius:8px;
+    background:#f4b400;
+    cursor:pointer;
+}
+
+.cancel-btn{
+    background:#ef4444 !important;
+    color:white;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">🚗 VRMS</div>
+    <nav>
+        <a href="./index.html">Home</a>
+        <a href="./vehicle.html" class="active">Vehicles</a>
+        <a href="./bookings.html">Bookings</a>
+    </nav>
+</header>
+
+<div class="page-header">
+    <h1>Our Fleet</h1>
+</div>
+
+<div class="vehicle-grid">
+
+    <div class="vehicle-card">
+        <div class="vehicle-image">
+            <img src="../static/cars/Amaze.webp">
+        </div>
+        <div class="vehicle-content">
+            <h3>Honda Amaze</h3>
+            <p class="price">₹1800/day</p>
+            <!-- 🔥 CHANGED -->
+            <button class="rent-btn" onclick="openForm('Honda Amaze')">Rent Now</button>
+        </div>
+    </div>
+
+    <div class="vehicle-card">
+        <div class="vehicle-image">
+            <img src="../static/cars/OIP (1).webp">
+        </div>
+        <div class="vehicle-content">
+            <h3>Hyundai i20</h3>
+            <p class="price">₹2000/day</p>
+            <button class="rent-btn" onclick="openForm('Hyundai i20')">Rent Now</button>
+        </div>
+    </div>
+
+    <div class="vehicle-card">
+        <div class="vehicle-image">
+            <img src="../static/cars/download.webp">
+        </div>
+        <div class="vehicle-content">
+            <h3>Grand Vitara</h3>
+            <p class="price">₹2500/day</p>
+            <button class="rent-btn" onclick="openForm('Grand Vitara')">Rent Now</button>
+        </div>
+    </div>
+
+    <div class="vehicle-card">
+        <div class="vehicle-image">
+            <img src="../static/cars/nano.webp">
+        </div>
+        <div class="vehicle-content">
+            <h3>Tata Nano</h3>
+            <p class="price">₹1200/day</p>
+            <button class="rent-btn" onclick="openForm('Tata Nano')">Rent Now</button>
+        </div>
+    </div>
+
+</div>
+
+<!-- 🔥 ADDED FORM -->
+<div id="formBox" class="formBox">
+    <div class="booking-form">
+        <h2>Enter Details</h2>
+
+        <input id="name" placeholder="Name">
+
+        <input id="email" type="email" placeholder="Email">
+
+        <input id="phone" type="tel" placeholder="Phone">
+
+        <input id="days" type="number" placeholder="Number of Days">
+
+        <input id="fromDate" type="date" placeholder="From Date">
+
+        <input id="toDate" type="date" placeholder="To Date">
+        
+        
+
+
+        <button onclick="saveBooking()">Confirm</button>
+        <button onclick="closeForm()" class="cancel-btn">Cancel</button>
+    </div>
+</div>
+
+<!-- JS -->
+<script src="../static/js/vehicle.js"></script>
+
+</body>
+</html>

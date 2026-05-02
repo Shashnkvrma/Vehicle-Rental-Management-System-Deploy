@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Admin Dashboard</title>
+
+<style>
+body{
+    background:#0b0f19;
+    color:white;
+    font-family:Arial;
+    padding:20px;
+}
+
+h1{
+    text-align:center;
+}
+
+.container{
+    max-width:900px;
+    margin:auto;
+}
+
+.card{
+    background:#111827;
+    padding:20px;
+    border-radius:10px;
+    margin-bottom:20px;
+}
+
+input, button{
+    padding:10px;
+    margin:5px;
+    border:none;
+    border-radius:5px;
+}
+
+input{
+    width:30%;
+}
+
+button{
+    background:#2563eb;
+    color:white;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#1d4ed8;
+}
+
+table{
+    width:100%;
+    margin-top:20px;
+    border-collapse:collapse;
+}
+
+th, td{
+    padding:10px;
+    border-bottom:1px solid #333;
+    text-align:center;
+}
+
+.delete-btn{
+    background:#ef4444;
+}
+</style>
+
+</head>
+
+<body>
+
+<h1>Admin Dashboard</h1>
+
+<div class="container">
+
+    <!-- ADD VEHICLE -->
+    <div class="card">
+        <h2>Add Vehicle</h2>
+
+        <form onsubmit="addVehicle(event)">
+            <input type="text" id="name" placeholder="Vehicle Name" required>
+            <input type="text" id="type" placeholder="Type (Car/Bike)" required>
+            <input type="number" id="price" placeholder="Price per day" required>
+            <button type="submit">Add</button>
+        </form>
+    </div>
+
+    <!-- VEHICLE LIST -->
+    <div class="card">
+        <h2>Vehicle List</h2>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Type</th>
+                    <th>Price</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+
+            <tbody id="vehicleTable"></tbody>
+        </table>
+    </div>
+
+</div>
+
+<div class="card">
+    <h2>Customer Bookings</h2>
+
+    <table>
+        <thead>
+           <tr>
+    <th>ID</th>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Phone</th>
+    <th>Car</th>
+    <th>From Date</th>
+    <th>To Date</th>
+    <th>Days</th>
+    <th>Total Price</th>
+    
+</tr>
+        </thead>
+
+        <tbody id="bookingTable"></tbody>
+    </table>
+</div>
+
+<script src="./Admin.js"></script>
+
+</body>
+</html>

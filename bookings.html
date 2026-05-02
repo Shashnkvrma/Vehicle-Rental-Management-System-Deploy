@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>My Bookings - VRMS</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins', sans-serif;
+}
+
+body{
+    background:#0b0f19;
+    color:white;
+}
+
+/* NAVBAR */
+header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:25px 80px;
+    background:rgba(0,0,0,0.9);
+    position:fixed;
+    width:100%;
+    top:0;
+    z-index:1000;
+}
+
+.logo{
+    font-size:24px;
+    font-weight:700;
+}
+
+nav a{
+    color:#ccc;
+    text-decoration:none;
+    margin:0 15px;
+}
+
+nav a:hover{
+    color:#f4b400;
+}
+
+/* TITLE */
+.title{
+    text-align:center;
+    padding-top:120px;
+    margin-bottom:40px;
+}
+
+.title h1{
+    font-size:45px;
+}
+
+.title p{
+    color:#9ca3af;
+}
+
+/* BOOKINGS */
+.container{
+    width:80%;
+    margin:auto;
+}
+
+.card{
+    background:#111827;
+    padding:20px;
+    margin-bottom:20px;
+    border-radius:12px;
+    border:1px solid rgba(255,255,255,0.08);
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:translateY(-5px);
+}
+
+.row{
+    display:flex;
+    justify-content:space-between;
+    flex-wrap:wrap;
+}
+
+.col{
+    margin:10px 0;
+}
+
+.label{
+    color:#9ca3af;
+    font-size:13px;
+}
+
+.value{
+    font-size:18px;
+    font-weight:600;
+}
+
+.no-bookings{
+    text-align:center;
+    margin-top:80px;
+    color:#9ca3af;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">🚗 VRMS</div>
+    <nav>
+        <a href="./vehicle.html">Vehicles</a>
+        <a href="./bookings.html">My Bookings</a>
+    </nav>
+</header>
+
+<div class="title">
+    <h1>My Bookings</h1>
+    <p>All your booked vehicles appear here</p>
+</div>
+
+<!-- 🔥 JS WILL FILL THIS -->
+<div class="container" id="booking-list"></div>
+
+<script src="../static/js/bookings.js"></script>
+
+</body>
+</html>

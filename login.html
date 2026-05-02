@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VRMS Login</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+
+<style>
+* { margin:0; padding:0; box-sizing:border-box; font-family:'Poppins', sans-serif; }
+body { background:#0b0f19; color:white; overflow-x: hidden; }
+
+/* NAVBAR */
+header {
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:30px 80px;
+    background:rgba(0,0,0,0.85);
+    position:fixed;
+    width:100%;
+    top:0;
+}
+
+.logo { font-size:24px; font-weight:700; color: #ccc; }
+
+nav { margin-left:auto; display:flex; gap:40px; }
+nav a { text-decoration:none; color:#ccc; font-size:18px; }
+nav a:hover, nav a.active { color:#f4b400; }
+
+/* LOGIN */
+.login-section {
+    height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    padding-top:80px;
+}
+
+.top-text { text-align:center; margin-bottom:40px; }
+.top-text h1 { font-size:60px; font-weight:800; }
+.top-text p { font-size:18px; color:#9ca3af; }
+
+.form-box {
+    width:420px;
+    background:#111827;
+    padding:40px;
+    border-radius:14px;
+}
+
+.input-group { margin-bottom:25px; }
+.input-group label { display:block; margin-bottom:8px; color:#f4b400; }
+
+.input-group input {
+    width:100%;
+    padding:16px;
+    border-radius:10px;
+    border:1px solid #1f2937;
+    background:#0b0f19;
+    color:white;
+}
+
+button {
+    width:100%;
+    padding:16px;
+    border:none;
+    background:#f4b400;
+    color:black;
+    font-size:18px;
+    font-weight:600;
+    border-radius:10px;
+    cursor:pointer;
+}
+
+button:hover { background:#e0a800; }
+
+.bottom { margin-top:25px; text-align:center; color:#9ca3af; }
+.bottom a { color:#f4b400; text-decoration:none; }
+
+.error-msg {
+    color:#ff4d4d;
+    background:rgba(255,77,77,0.1);
+    padding:10px;
+    border-radius:8px;
+    margin-bottom:15px;
+    text-align:center;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">🚗 VRMS</div>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="vehicle.html">Vehicles</a>
+        <a href="login.html" class="active">Book Now</a>
+    </nav>
+</header>
+
+<section class="login-section">
+    <div class="top-text">
+        <h1>Welcome Back</h1>
+        <p>Sign in to manage your bookings</p>
+    </div>
+
+    <div class="form-box">
+
+        <!-- ERROR MESSAGE -->
+        <div id="error" class="error-msg" style="display:none;"></div>
+
+        <!-- FORM -->
+        <form onsubmit="handleLogin(event)">
+            <div class="input-group">
+                <label>Email</label>
+                <input type="text" id="email" placeholder="Enter your email" required>
+            </div>
+
+            <div class="input-group">
+                <label>Password</label>
+                <input type="password" id="password" placeholder="Enter your password" required>
+            </div>
+
+            <button type="submit">Login</button>
+        </form>
+
+        <div class="bottom">
+            Don't have an account? <a href="register.html">Sign Up</a>
+        </div>
+
+    </div>
+</section>
+
+<script src="../static/js/login.js"></script>
+
+
+
+</body>
+</html>
