@@ -9,7 +9,7 @@ function adminLogin(e){
         localStorage.setItem("admin", "true");
 
         // ✅ FIXED (capital A)
-        window.location.href = "Admin.html";
+        window.location.href = "admin.html";
 
     } else {
         msg.innerText = "Invalid Admin Credentials ❌";
